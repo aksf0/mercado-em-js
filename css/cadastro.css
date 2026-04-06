@@ -10,23 +10,34 @@
     font-weight: 550;
 }
 
+form {
+    display: flex;
+    flex-direction: column;
+    margin: 50px 20px 50px 20px;
+}
+
+form input {
+    border-radius: 10px;
+    padding: 5px 20px;
+    margin-bottom: 40px;
+    margin-top: 6px;
+    width: 250px;
+}
+
 h1 {
-    font-weight: 750;
-    margin: 70px 0 20px 20px;
+    background-color: red;
+    padding: 20px 30px;
+    height: 80px;
 }
 
-h2 {
-    margin: 0 20px;
-}
-
-.addItens .ofertas form {
+form {
     display: flex;
     flex-direction: column;
     margin: 20px 0 0 20px;
 }
 
-.addItens .ofertas form input {
-    margin: 6px 0 0 0;
+form input {
+    margin: 6px 0 30px 0;
     padding: 8px;
     font-size: 16px;
     width: 400px;
@@ -34,43 +45,26 @@ h2 {
     transition: 0.3s;
 }
 
-.addItens .ofertas form input:hover {
+form input:hover {
     transform: scale(1.1);
     margin-left: 20px;
 }
 
-.addItens .ofertas form textarea {
-    margin: 6px 0 0 0;
-    padding: 8px;
-    font-size: 16px;
-    width: 400px;
-    height: 100px;
+a {
+    display: flex;
+    background-color: gray;
+    padding: 10px 20px;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 200px 20px 200px;
+    border: 2px solid black;
     border-radius: 10px;
-    transition: 0.3s     ;
+    color: burlywood;
+    font-weight: 700;
+    font-size: 25px;
+    transition: 0.3s;
 }
 
-.addItens .ofertas form textarea:hover {
+a:hover {
     transform: scale(1.1);
-    margin-left: 20px;
-    margin-bottom: 10px;
-}
-
-.addItens .ofertas label {
-    margin-top: 50px;
-}
-
-.addItens form p {
-    color: red;
-}
-
-.produto img {
-    height: 0px;
-}
-
-.produto h3 {
-    font-size: 0px;
-}
-
-.produto p {
-    font-size: 0px;
 }

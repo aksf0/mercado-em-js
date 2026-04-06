@@ -1,6 +1,15 @@
+//ignore a bagunça desse codigo, alguma hora eu organizo
+//o importante é que ta funcionando (não sei até quando)
 
-  const listaProdutos = JSON.parse(localStorage.getItem("elementos")) || [];
+const listaProdutos = JSON.parse(localStorage.getItem("elementos")) || [];
 
+if (document.querySelector(".semProdutos")) {
+    if (listaProdutos.length < 1) {
+        document.querySelector(".semProdutos");
+    }else {
+        document.querySelector(".semProdutos").remove();
+    }
+}
   function novoProduto(nome, imagem, preco, descricao) {
     const produto = {
         nome: nome.value,
@@ -66,13 +75,14 @@ if (elementos) {
 
 function criarOferta(dados) {
     
-    const novoProduto = document.createElement("div");
+    const novoProduto = document.createElement("a");
     const produtoNome = document.createElement("h3");
     const produtoImg = document.createElement("img");
     const produtoPreco = document.createElement("p");
     const produtoDesc = document.createElement("p");
 
     novoProduto.classList.add("produto");
+    novoProduto.href = "#";
     document.querySelector(".containerOfertas").appendChild(novoProduto);
     novoProduto.appendChild(produtoNome);
     produtoNome.innerText = dados.nome;
@@ -83,5 +93,3 @@ function criarOferta(dados) {
     novoProduto.appendChild(produtoDesc);
     produtoDesc.innerText = dados.descricao;
 }
-
-
