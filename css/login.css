@@ -10,6 +10,32 @@
     font-weight: 550;
 }
 
+.navbar {
+    display: flex;
+    background-color: red;
+    padding: 20px 30px;
+    height: 80px;
+    font-size: 18px;
+    align-items: center;
+}
+
+.navbar a {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    background-color: burlywood;
+    padding: 12px 10px;
+    border-radius: 10px;
+    font-size: 18px;
+    transition: 0.3s;
+}
+
+.navbar a:hover {
+    transform: scale(1.2);
+    margin: 0 10px;
+    border: 2px solid black;
+}
+
 form {
     display: flex;
     flex-direction: column;
@@ -65,30 +91,4 @@ main a {
 
 main a:hover {
     transform: scale(1.1);
-}
-
-.navbar {
-    display: flex;
-    background-color: red;
-    padding: 20px 30px;
-    height: 80px;
-    font-size: 18px;
-    align-items: center;
-}
-
-.navbar a {
-    display: flex;
-    gap: 10px;
-    align-items: center;
-    background-color: burlywood;
-    padding: 12px 10px;
-    border-radius: 10px;
-    font-size: 18px;
-    transition: 0.3s;
-}
-
-.navbar a:hover {
-    transform: scale(1.2);
-    margin: 0 10px;
-    border: 2px solid black;
 }
