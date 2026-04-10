@@ -135,5 +135,5 @@ h2 {
 }
 .semProdutos a:hover {
     transform: scale(1.2);
-    padding-left: 20px;
+    padding: 2% 10% 0 10%;
 }
