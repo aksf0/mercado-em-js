@@ -38,15 +38,25 @@ function preview() {
  if (document.querySelector("form")) {
 document.querySelector("form").addEventListener("submit", function(event) {
     event.preventDefault();
-    
-    
+        
     const offerName = document.getElementById("nomeInput");
+    const imgInput = document.getElementById("imagemInput");
     const offerImg = document.getElementById("previewOferta");
     const offerPrice = document.getElementById("precoInput");
     const offerDesc = document.getElementById("descricaoInput");
-
+    const itemAdicionado = document.getElementById("itemAdicionado");
+    
     if (offerName.value.trim() != "" && offerImg.src.trim() != "" && offerPrice.value.trim() != "" && offerDesc.value.trim() != "") {
-    novoProduto(offerName, offerImg, offerPrice, offerDesc);
+        novoProduto(offerName, offerImg, offerPrice, offerDesc);
+        itemAdicionado.innerText = "Item Adicionado";
+        itemAdicionado.style.color = "green";
+        offerName.value = "";
+        imgInput.value = "";
+        offerImg.src = "";
+        offerPrice.value = "";
+        offerDesc.value = "";    
+    }else{
+        itemAdicionado.innerText = "";
     }
 
     const offerElements = [offerName.value, document.getElementById("imagemInput").value, offerPrice.value, offerDesc.value];
@@ -55,11 +65,13 @@ document.querySelector("form").addEventListener("submit", function(event) {
     
     localStorage.setItem("elementos", JSON.stringify(listaProdutos));
     //verificar se todos os requerimentos da oferta foram preenchidos
-    for (var i = 0; i < offerElements.length; i++) {
-        if (offerElements[i] === "") {
-            offerTexts[i].innerText = "Preencha o campo";
-        }else {
-            offerTexts[i].innerText = "";
+    if (itemAdicionado.innerText == ""){
+        for (var i = 0; i < offerElements.length; i++) {
+            if (offerElements[i] == "") {
+                offerTexts[i].innerText = "Preencha o campo";
+            }else {
+                offerTexts[i].innerText = "";
+            }
         }
     }
 
@@ -82,7 +94,7 @@ function criarOferta(dados) {
     const produtoDesc = document.createElement("p");
 
     novoProduto.classList.add("produto");
-    novoProduto.href = "#";
+    novoProduto.href = `pages/detalhes.html?id=${dados.nome}`;
     document.querySelector(".containerOfertas").appendChild(novoProduto);
     novoProduto.appendChild(produtoNome);
     produtoNome.innerText = dados.nome;
