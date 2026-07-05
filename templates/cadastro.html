@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/cadastro.css') }}">
+</head>
+<body>
+
+    <header>
+        <nav class="navbar">
+            <a href="{{ url_for('index') }}" class="voltarBtn"><i class="fa-solid fa-arrow-left"></i> Voltar</a>
+        </nav>
+    </header>
+
+    <h1>Cadastrar-se</h1>
+    <main>
+        <form class="cadastroForm">
+            <label for="userNome">Nome</label>
+            <input type="text" id="userNome" placeholder="Digite seu nome Completo">
+
+            <label for="userEmail">Email</label>
+            <input type="email" id="userEmail" placeholder="exemplo@exemplo.com">
+
+            <label for="userSenha">Crie uma senha</label>
+            <input type="password" id="userSenha" placeholder="Digite uma senha">
+
+            <input type="submit" id="submitCadastroBtn">
+            <p id="cadastroRetorno"></p>
+        </form>
+
+        <a href="{{ url_for('login') }}">Já tem uma conta?</a>
+    </main>
+    <script src="{{ url_for('static', filename='scripts/cadastro.js') }}"></script>
+      <script src="https://kit.fontawesome.com/61a32136cb.js" crossorigin="anonymous"></script>
+</body>
+</html>

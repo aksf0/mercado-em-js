@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/detalhes.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/detalhes.css') }}">
     <title></title>
 </head>
 <body>
     <header>
         <nav class="navbar">
-            <a href="../index.html" class="voltarBtn"><i class="fa-solid fa-arrow-left"></i> Voltar</a>
+            <a href="{{ url_for('index') }}" class="voltarBtn"><i class="fa-solid fa-arrow-left"></i> Voltar</a>
         </nav>
     </header>
 
@@ -19,8 +19,11 @@
         <h2 id="precoProduto"></h2>
     </div>
     <p id="descProduto"></p>
+
+    <button id="adicionarCarrinho" onclick="adicionarCarrinho(document.getElementById('tituloProduto').innerText)">Adicionar ao carrinho</button>
     
     <script src="https://kit.fontawesome.com/61a32136cb.js" crossorigin="anonymous"></script>
-    <script src="../scripts/detalhes.js"></script>
+    <script src="{{ url_for('static', filename='scripts/detalhes.js') }}"></script>
+    <script src="{{ url_for('static', filename='scripts/carrinho.js') }}"></script>
 </body>
 </html>

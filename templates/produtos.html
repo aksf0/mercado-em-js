@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>produtos</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/produtos.css') }}">
+</head>
+<body>
+
+    <header>
+        <nav class="navbar">
+            <a href="{{ url_for('index') }}" class="voltarBtn"><i class="fa-solid fa-arrow-left"></i> Voltar</a>
+        </nav>
+    </header>
+    
+    <main class="addItens">
+        <h1>Produtos</h1>
+        <div class="ofertas">
+            <h2>Adicionar Itens às ofertas</h2>
+            <form>
+                <label for="nomeInput">Nome do produto:</label>
+                <input type="text" id="nomeInput" placeholder="Nome do produto">
+                <p id="textoNome"></p>
+
+                <label for="imagemInput">Imagem do produto:</label>
+                <input type="url" id="imagemInput" placeholder="coloque a url da imagem" pattern=".+(jpg|jpeg|png|gif|bmp|tiff|webp).*">
+                <p id="textoImagem"></p>
+                <img id="previewOferta" src="" style="max-width: 300px;">
+
+                <label for="precoInput">Preço do produto:</label>
+                <input type="number" id="precoInput" placeholder="Preço do produto" step="0.01">
+                <p id="textoPreco"></p>
+
+                <label for="descricaoInput">Descrição do produto:</label>
+                <textarea id="descricaoInput" placeholder="Descrição do produto"></textarea>
+                <p id="textoDescricao"></p>
+                
+                <input type="submit" value="Adicionar Oferta" class="adicionarOfertaBtn">
+                <p id="itemAdicionado"></p>
+            </form>
+        </div>
+    </main>
+
+        <div class="containerOfertas">
+        </div>
+    
+    <script src="{{ url_for('static', filename='scripts/ofertas.js') }}"></script>
+    <script src="https://kit.fontawesome.com/61a32136cb.js" crossorigin="anonymous"></script>
+</body>
+</html>

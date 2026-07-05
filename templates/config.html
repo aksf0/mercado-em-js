@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>configurações</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/config.css') }}">
+</head>
+<body>
+
+    <header>
+        <nav class="navbar">
+            <a href="{{ url_for('index') }}" class="voltarBtn"><i class="fa-solid fa-arrow-left"></i> Voltar</a>
+        </nav>
+    </header>
+
+    <h1>Configurações</h1>
+    <main>
+        <section id="produtos">
+            <a href="{{ url_for('produtos') }}"><h2>Gerenciar Produtos</h2><i class="fa-solid fa-arrow-up-right-from-square"></i>
+            </a></section>
+    </main>
+
+    <script src="{{ url_for('static', filename='scripts/ofertas.js') }}"></script>
+    <script src="https://kit.fontawesome.com/61a32136cb.js" crossorigin="anonymous"></script>
+</body>
+</html>

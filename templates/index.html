@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mercado</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <ul>
+                <div class="ladoEsquerdo">
+                    <li><a href="{{ url_for('config') }}"><i class="fas fa-cog"></i></a></li>
+                    <li><a href="#home"><i class="fas fa-home"></i></a></li>
+                    <li><a href="{{ url_for('carrinho') }}"><i class="fas fa-shopping-cart"></i></a></li>
+                </div>
+                <div class="ladoDireito">
+                    <li class="cadastro"><a href="{{ url_for('cadastro') }}"><i class="fas fa-user-plus"></i> Cadastrar</a></li>
+                    <li class="login"><a href="{{ url_for('login') }}"><i class="fas fa-user"></i> Login</a></li>
+                </div>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="introducao">
+        <h1>Bem-vindo ao Nosso Mercado!</h1>
+        <p>Encontre os <strong><span class="palavraForte">melhores produtos</span></strong> com os <strong><span class="palavraForte">melhores preços </span></strong><i class="fas fa-tag"></i></p>
+    </div>
+    <main class="loja"></main>
+        <section class="produtos">
+            <div class="principaisOfertas">
+                <h2>Principais Ofertas</h2>
+                <div class="containerOfertas">
+                    <div class="semProdutos">
+                    <h4>Sem produtos aqui</h4>
+                    <a href="{{ url_for('produtos') }}">Adicionar <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <script src="{{ url_for('static', filename='scripts/cadastro.js') }}"></script>
+    <script src="{{ url_for('static', filename='scripts/ofertas.js') }}"></script>
+    <script src="https://kit.fontawesome.com/61a32136cb.js" crossorigin="anonymous"></script>
+</body>
+</html>
