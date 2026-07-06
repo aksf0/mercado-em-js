@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/detalhes.css') }}">
-    <title></title>
+    <title>{{ produto[0] }}</title>
 </head>
 <body>
     <header>
@@ -13,12 +13,12 @@
         </nav>
     </header>
 
-    <img id="imgProduto" src="" alt="">
+    <img id="imgProduto" src="{{ produto[2] }}" alt="">
     <div id = faixaPrincipal>
-        <h1 id="tituloProduto"></h1>
-        <h2 id="precoProduto"></h2>
+        <h1 id="tituloProduto">{{ produto[0] }}</h1>
+        <h2 id="precoProduto">R${{ "%.2f"|format(produto[1]) }}</h2>
     </div>
-    <p id="descProduto"></p>
+    <p id="descProduto">{{ produto[3] }}</p>
 
     <button id="adicionarCarrinho" onclick="adicionarCarrinho(document.getElementById('tituloProduto').innerText)">Adicionar ao carrinho</button>
     

@@ -16,34 +16,51 @@
     
     <main class="addItens">
         <h1>Produtos</h1>
+
+        <div class="containerOfertas">
+            {% if produtos | length > 0 %}
+                {% for produto in produtos %}
+                    <li>
+                        <a href="{{ url_for('detalhes', id = produto[0]) }}">
+                            <h3>{{ produto[1] }}</h3>
+                            <img src="{{ produto[3] }}">
+                            <p>R${{ "%.2f"|format(produto[2]) }}</p>
+                            <p>{{ produto[4] }}</p>
+                        </a>
+                        <button class="excluirBtn" onclick="excluirProduto('{{produto[0]}}')">X</button>
+                    </li>
+                {% endfor %}
+            {% else %}
+                <div class="semProdutos">
+                    <h4>Sem produtos aqui</h4>
+                </div>
+            {% endif %}
+        </div>
         <div class="ofertas">
             <h2>Adicionar Itens às ofertas</h2>
-            <form>
+            <form action="{{ url_for('produtos') }}" method="POST">
                 <label for="nomeInput">Nome do produto:</label>
-                <input type="text" id="nomeInput" placeholder="Nome do produto">
+                <input type="text" id="nomeInput" name="nomeInput" placeholder="Nome do produto">
                 <p id="textoNome"></p>
 
                 <label for="imagemInput">Imagem do produto:</label>
-                <input type="url" id="imagemInput" placeholder="coloque a url da imagem" pattern=".+(jpg|jpeg|png|gif|bmp|tiff|webp).*">
+                <input type="url" id="imagemInput" name="imagemInput" placeholder="coloque a url da imagem" pattern=".+(jpg|jpeg|png|gif|bmp|tiff|webp).*">
                 <p id="textoImagem"></p>
                 <img id="previewOferta" src="" style="max-width: 300px;">
 
                 <label for="precoInput">Preço do produto:</label>
-                <input type="number" id="precoInput" placeholder="Preço do produto" step="0.01">
+                <input type="number" id="precoInput" name="precoInput" placeholder="Preço do produto" step="0.01">
                 <p id="textoPreco"></p>
 
                 <label for="descricaoInput">Descrição do produto:</label>
-                <textarea id="descricaoInput" placeholder="Descrição do produto"></textarea>
+                <textarea id="descricaoInput" name="descricaoInput" placeholder="Descrição do produto"></textarea>
                 <p id="textoDescricao"></p>
                 
-                <input type="submit" value="Adicionar Oferta" class="adicionarOfertaBtn">
+                <button type="submit" class="adicionarOfertaBtn">Adicionar oferta</button>
                 <p id="itemAdicionado"></p>
             </form>
         </div>
     </main>
-
-        <div class="containerOfertas">
-        </div>
     
     <script src="{{ url_for('static', filename='scripts/ofertas.js') }}"></script>
     <script src="https://kit.fontawesome.com/61a32136cb.js" crossorigin="anonymous"></script>

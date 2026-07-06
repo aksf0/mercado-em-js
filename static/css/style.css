@@ -84,27 +84,32 @@ h2 {
     justify-content: baseline;
     align-items: center;
     overflow-x: auto;
+    gap: 10px;
 }
 
-.produto {
+.containerOfertas {
     margin: 5px;
 }
 
-.produto h3 {
+.containerOfertas h3 {
     font-size: 25px;
 }
 
-.produto img {
+.containerOfertas img {
     height: 200px;
     border-radius: 10px;
     transition: 0.15s;
     border: 2px solid black;
 }
 
-.produto img:hover {
+.containerOfertas img:hover {
     border: solid 3px red;
     padding: 5px;
     background-color: black;
+}
+
+.containerOfertas li {
+    list-style: none;
 }
 
 .semProdutos {

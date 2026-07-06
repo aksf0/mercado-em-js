@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Datatype:wght@100..900&family=Funnel+Display:wght@300..800&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
+html {
+    font-size: 100%;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -11,92 +15,155 @@
 }
 
 h1 {
+    font-size: 2rem;
     font-weight: 750;
-    margin: 70px 0 20px 20px;
+    margin: 1.25rem 0 0 1.25rem;
 }
 
 h2 {
-    margin: 0 20px;
+    margin: 0 1.25rem;
+}
+
+.addItens .ofertas {
+    font-size: 1.3rem;
+    max-width: 50rem;
+    width: 97%;
 }
 
 .addItens .ofertas form {
     display: flex;
     flex-direction: column;
-    margin: 20px 0 0 20px;
+    justify-content: center;
+    align-items: flex-start;
 }
 
-.addItens .ofertas form input {
-    margin: 6px 0 0 0;
-    padding: 8px;
-    font-size: 16px;
-    width: 400px;
+@media (max-width: 768px) {
+
+    h1, h2 {
+        text-align: center;
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .addItens .ofertas form {
+        align-items: center;
+    }
+
+    .addItens .ofertas form label {
+        margin: 2em 0 0 0;
+    }
+}
+
+.addItens .ofertas form input, textarea, button {
+    margin: 1.25rem 0 0 1.25rem;
+    padding: 0.5em;
+    font-size: 1em;
+    max-width: 50em;
+    width: 60%;
     border-radius: 10px;
     transition: 0.3s;
 }
 
-.addItens .ofertas form input:hover {
-    transform: scale(1.1);
-    margin-left: 20px;
+.addItens .ofertas form input:hover, textarea:hover {
+    width: 90%;
+    transform: scale(1.04);
 }
 
 .addItens .ofertas form textarea {
-    margin: 6px 0 0 0;
-    padding: 8px;
-    font-size: 16px;
-    width: 400px;
-    height: 100px;
-    border-radius: 10px;
-    transition: 0.3s     ;
-}
-
-.addItens .ofertas form textarea:hover {
-    transform: scale(1.1);
-    margin-left: 20px;
-    margin-bottom: 10px;
+    height: 6.25em;
 }
 
 .addItens .ofertas label {
-    margin-top: 50px;
+    margin: 2em 0 0 1.25em;
 }
 
 .addItens form p {
     color: red;
 }
 
-.produto img {
-    height: 0px;
-}
-
-.produto h3 {
-    font-size: 0px;
-}
-
-.produto p {
-    font-size: 0px;
-}
-
 .navbar {
     display: flex;
     background-color: red;
-    padding: 20px 30px;
-    height: 80px;
-    font-size: 18px;
+    padding: 1.25rem 1.875rem;
+    height: 5rem;
+    font-size: 1.125rem;
     align-items: center;
 }
 
 .navbar a {
     display: flex;
-    gap: 10px;
+    gap: 0.625em;
     align-items: center;
     background-color: burlywood;
-    padding: 12px 10px;
+    padding: 0.75em 0.625em;
     border-radius: 10px;
-    font-size: 18px;
+    font-size: 1em;
     transition: 0.3s;
 }
 
 .navbar a:hover {
-    transform: scale(1.2);
-    margin: 0 10px;
+    transform: scale(1.1);
+    margin: 0 0.625em;
     border: 2px solid black;
+}
+
+.addItens .ofertas button {
+    cursor: pointer;
+    margin-top: 1em;
+    margin-bottom: 1rem;
+    border: 1px dashed gray;
+    border-radius: 10px;
+    font-size: 1.5em;
+    background-color: rgb(24, 146, 247);
+    transition: 0.3s;
+}
+
+.addItens .ofertas button:hover {
+    background-color: rgb(132, 194, 245);
+    border: 2px solid black;
+    width: 90%;
+}
+
+.addItens .ofertas img {
+    margin-top: 1em;
+}
+
+.containerOfertas {
+    display: flex;
+    flex-direction: row;
+    justify-content: baseline;
+    align-items: center;
+    overflow-x: auto;
+    gap: 10px;
+}
+
+.containerOfertas {
+    margin: 5px;
+}
+
+.containerOfertas h3 {
+    font-size: 25px;
+}
+
+.containerOfertas img {
+    height: 200px;
+    border-radius: 10px;
+    transition: 0.15s;
+    border: 2px solid black;
+}
+
+.containerOfertas img:hover {
+    border: solid 3px red;
+    padding: 5px;
+    background-color: black;
+}
+
+.containerOfertas li {
+    list-style: none;
+}
+
+.excluirBtn {
+    cursor: pointer;
+    color: red;
+    font-size: 1rem;
 }
